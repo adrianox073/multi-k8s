@@ -3,16 +3,16 @@ services:
     - docker
 
 before_install:
-    - docker build -t adrianox073/react-test -f ./client/Dockerfile.dev ./client
+    - docker build -t adrianoxy/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - docker run -e CI=true adrianox073/react-test npm test
+    - docker run -e CI=true adrianoxy/react-test npm test
 
 after_success:
-    - docker build -t adrianox073/multi-client ./client
-    - docker build -t adrianox073/multi-nginx ./nginx
-    - docker build -t adrianox073/multi-server ./server
-    - docker build -t adrianox073/multi-worker ./worker
+    - docker build -t adrianoxy/multi-client ./client
+    - docker build -t adrianoxy/multi-nginx ./nginx
+    - docker build -t adrianoxy/multi-server ./server
+    - docker build -t adrianoxy/multi-worker ./worker
     # Log in to the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Take those images and push them to docker hub
