@@ -16,7 +16,7 @@ after_success:
     # Log in to the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Take those images and push them to docker hub
-    - docker push adrianox073/multi-client
-    - docker push adrianox073/multi-nginx 
-    - docker push adrianox073/multi-server 
-    - docker push adrianox073/multi-worker
+    - docker push adrianoxy/multi-client
+    - docker push adrianoxy/multi-nginx 
+    - docker push adrianoxy/multi-server 
+    - docker push adrianoxy/multi-worker
